@@ -1,0 +1,82 @@
+#########################################################################
+# This is the config file for AStarOMP.									#
+# Below are the configurable parameters.								#
+# Do not delete or comment any of these even if they are not used.		#
+#																		#
+# Nazim Burak Karahanoglu												#
+# karahanoglu@sabanciuniv.edu, burak.karahanoglu@gmail.com		        #
+# Sabanci University, 2011						                        #
+#########################################################################
+
+[Data_Parameters]
+			
+# number of test vectors
+NoVectors = 1
+
+# total dimensions & dictionary size
+N = 3
+
+# observation size		
+M = 3
+
+# Do you want to provide a file for reading sparse target vectors?
+# read TestFileName if ReadTargetVectors = 1, ignores it if ReadTargetVectors = 0
+ReadTargetVectors = 1
+
+# binary(.bin) or text(.txt) file to read sparse target vectors (x)
+TargetFileName = astaromp-x-N3-M3-K1.txt
+
+# binary(.bin) or text(.txt) file for measurements (y)
+MeasurementsFileName = astaromp-y-N3-M3-K1.txt
+
+# binary(.bin) or text(.txt) file for dictionary/observation matrix (phi)
+DictFileName = astaromp-Phi-N3-M3-K1.txt
+
+# Dictionary mode (single or multi). If single, only one dictionary is read from the dictionary file and
+# is used for all test vectors. If multi, an individual dictionary is read from the dictionary file for each test
+# vector. In latter, dictionaries should be concatenated. 
+DictMode = multi
+
+[OutputFiles]
+
+# binary(.bin) or text(.txt) file to write the reconstructed vectors
+RecVectorsFileName = OutputVectors.txt
+
+# text(.txt) file to write evaluation results
+ResultFile = Results.txt
+
+[A*OMP_Parameters]
+
+# sparsity (maximum number of nonzero entries)
+# search is terminated when K nonzero entries are reached.
+K = 1
+
+# allowable error tolerance in reconstruction of measurements 
+# search is terminated when (l2 norm of residue/ l2 norm of observation vector) becomes lower than Eps.
+Eps = 0.0000009
+
+# parameter for multiplicative or adaptive-multiplicative cost model
+alpha = 0.9
+
+# parameter for adaptive-additive cost model
+beta = 1.3
+
+# select cost model
+# ADAPMUL : Adaptive-multiplicative cost model
+# ADAP : Adaptive cost model
+# MUL : Multiplicative cost model
+myAuxiliaryFunctionMode = ADAPMUL 
+
+# Number of initial paths
+I = 3
+
+# Initial path Length (1 or 2)
+# If 2, the first vector in each path is forced to be the 0'th vector in the dictionary. 
+# (This might be more suitable for images, where  the DC component is usually non-zero.)
+InitPL = 1;
+
+# Number of extensions per iteration
+B = 2
+
+# Number of maximum paths in search stack
+P = 200

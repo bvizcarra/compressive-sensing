@@ -1,0 +1,27 @@
+ALGORITHM PARAMETERS: 
+   Max. Non-zero components (K): 1
+   Error Tolerance for termination (Eps): 9e-07
+   Signal length (N):3
+   No observations (M):3
+   No Initial Branches (I):3
+   No Branches per Extension (B): 2
+   No Maximum Paths in Stack (P): 200
+   Auxiliary Function Type: Adaptive-Multiplicative
+   Alpha: 0.9
+
+Reconstruction successful, reconstructed vectors written in OutputVectors.txt
+
+RECONSTRUCTION RESULTS:
+   No. Total Vectors: 1
+   Average Normalized Mean Squared Error: 2.48179e-13
+   No. Exactly Reconstructed Vectors: 1
+   Exact Reconstruction Rate: %100
+   A* Search Analysis Results: 
+      Total Time: 3.891e-06 sec.
+      Statistics per vector:
+         Average Time: 3.891e-06 sec.
+         No. Iterations: 0
+         No. Added Branches: 3
+         No. Replaced Branches: 0
+         No. Equivalent Branches: 0
+         No. Ignored Branches: 0
